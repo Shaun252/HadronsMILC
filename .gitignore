@@ -3,7 +3,9 @@
 /.buildutils
 /.vscode
 /autom4te.cache
-/config.*
+/config.guess
+/config.sub
+/config.h.in
 /compile
 /ar-lib
 /aclocal.m4
@@ -25,3 +27,8 @@ AGENTS.md
 CLAUDE.md
 .pi*
 .rpiv
+autoresearch.jsonl
+
+# test/ run output -- see test/README.md
+/test/work/
+docs

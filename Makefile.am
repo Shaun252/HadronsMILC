@@ -10,3 +10,5 @@ HadronsMILC_SOURCES = main.cpp
 # dependency, so the binary was never relinked when a module changed and
 # silently kept the previously compiled module code.
 HadronsMILC_LDADD = $(top_builddir)/src/libHadronsMILC.a
+
+EXTRA_DIST = DEPENDENCIES CHANGELOG.md

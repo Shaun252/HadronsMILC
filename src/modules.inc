@@ -4,13 +4,17 @@ modules_cpp =\
   Modules/MContraction/ASlashMesonField.cpp \
   Modules/MContraction/Meson.cpp \
   Modules/MContraction/MesonField.cpp \
-  Modules/MContraction/MesonField_old.cpp \
+  Modules/MContraction/MesonFieldLegacy.cpp \
+  Modules/MContraction/MesonLegacy.cpp \
   Modules/MFermion/GaugeProp.cpp \
+  Modules/MFermion/GaugePropLegacy.cpp \
+  Modules/MFermion/LMAMesonFieldProp.cpp \
   Modules/MFermion/SpinTaste.cpp \
   Modules/MGauge/APBCGauge.cpp \
   Modules/MGauge/HISQSmear.cpp \
   Modules/MGauge/StochEmFunc.cpp \
   Modules/MGauge/U1Phase.cpp \
+  Modules/MIO/LoadMesonField.cpp \
   Modules/MIO/LoadMilc.cpp \
   Modules/MIO/LoadU1.cpp \
   Modules/MIO/SaveIldg.cpp \
@@ -28,8 +32,13 @@ modules_cpp =\
   Modules/MSource/RandomWall.cpp \
   Modules/MSource/SeqAslash.cpp \
   Modules/MSource/SeqGamma.cpp \
+  Modules/MUtilities/EigenPackCBPairs.cpp \
+  Modules/MUtilities/EigenPackCheck.cpp \
   Modules/MUtilities/EigenPackExtractEvals.cpp \
-  Modules/MUtilities/ModifyEigenPack.cpp
+  Modules/MUtilities/EigenPackFullPairs.cpp \
+  Modules/MUtilities/GammaMapElement.cpp \
+  Modules/MUtilities/ModifyEigenPack.cpp \
+  Modules/MUtilities/PropToFermions.cpp
 
 modules_hpp =\
   Modules/MAction/ImprovedStaggered.hpp \
@@ -37,13 +46,17 @@ modules_hpp =\
   Modules/MContraction/ASlashMesonField.hpp \
   Modules/MContraction/Meson.hpp \
   Modules/MContraction/MesonField.hpp \
-  Modules/MContraction/MesonField_old.hpp \
+  Modules/MContraction/MesonFieldLegacy.hpp \
+  Modules/MContraction/MesonLegacy.hpp \
   Modules/MFermion/GaugeProp.hpp \
+  Modules/MFermion/GaugePropLegacy.hpp \
+  Modules/MFermion/LMAMesonFieldProp.hpp \
   Modules/MFermion/SpinTaste.hpp \
   Modules/MGauge/APBCGauge.hpp \
   Modules/MGauge/HISQSmear.hpp \
   Modules/MGauge/StochEmFunc.hpp \
   Modules/MGauge/U1Phase.hpp \
+  Modules/MIO/LoadMesonField.hpp \
   Modules/MIO/LoadMilc.hpp \
   Modules/MIO/LoadU1.hpp \
   Modules/MIO/SaveIldg.hpp \
@@ -61,6 +74,11 @@ modules_hpp =\
   Modules/MSource/RandomWall.hpp \
   Modules/MSource/SeqAslash.hpp \
   Modules/MSource/SeqGamma.hpp \
+  Modules/MUtilities/EigenPackCBPairs.hpp \
+  Modules/MUtilities/EigenPackCheck.hpp \
   Modules/MUtilities/EigenPackExtractEvals.hpp \
-  Modules/MUtilities/ModifyEigenPack.hpp
+  Modules/MUtilities/EigenPackFullPairs.hpp \
+  Modules/MUtilities/GammaMapElement.hpp \
+  Modules/MUtilities/ModifyEigenPack.hpp \
+  Modules/MUtilities/PropToFermions.hpp
 
