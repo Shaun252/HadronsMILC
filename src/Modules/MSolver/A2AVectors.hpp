@@ -106,13 +106,16 @@ std::vector<std::string> TA2AVectorsMILC<FImpl, Pack>::getInput(void) {
   subsolver_ = par().solver;
   if (!par().lowModes.empty()) {
     in.push_back(par().lowModes);
+    // setup() uses solver_ (the plain solver) when lowModes is an eigenpack
+    // and subsolver_ when it is a guess vector, so both must be declared;
+    // otherwise the plain solver can be unavailable at setup ("object ...
+    // is empty").
+    if (!par().solver.empty()) {
+      in.push_back(par().solver);
+    }
     if (env().hasObject(par().solver + "_subtract")) {
       in.push_back(par().solver + "_subtract");
       subsolver_ += "_subtract";
-    } else {
-      if (!par().solver.empty()) {
-        in.push_back(par().solver);
-      }
     }
   } else {
     if (!par().solver.empty()) {
