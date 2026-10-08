@@ -122,7 +122,9 @@ DependencyMap TCGMILC<FImpl>::getObjectDependencies(void) {
   RealD nr = norm2(tmp);                                                       \
   LOG(Message) << "Final true residual: " << std::sqrt(nr / ns) << std::endl;  \
   if (subGuess) {                                                              \
-    guesser(source, sol);                                                      \
+    /* return sol - guess (as MixedPrecisionCG does); writing the guess   */  \
+    /* into sol here overwrote the solution and returned guess - residual */  \
+    guesser(source, tmp);                                                      \
     sol = sol - tmp;                                                           \
   }
 
