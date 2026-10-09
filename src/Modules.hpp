@@ -2,6 +2,7 @@
 #include "Modules/MAction/ImprovedStaggered5D.hpp"
 #include "Modules/MContraction/ASlashMesonField.hpp"
 #include "Modules/MContraction/DeltaDLoop.hpp"
+#include "Modules/MContraction/DeltaDLoopFast.hpp"
 #include "Modules/MContraction/Meson.hpp"
 #include "Modules/MContraction/MesonField.hpp"
 #include "Modules/MContraction/MesonFieldLegacy.hpp"

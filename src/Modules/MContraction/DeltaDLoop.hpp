@@ -111,7 +111,7 @@ protected:
   virtual void setup(void);
   virtual void execute(void);
 
-private:
+protected: // StagDeltaDLoopFast derives from this module and replaces computeM
   // build the full-volume low-mode pair vectors k0..k0+n-1 (2n vectors,
   // slot 2k = (e+o)/sqrt2, 2k+1 = (e-o)/sqrt2, unit norm) into out[0..2n)
   void makeLowPairs(FermionField *out, const Pack &epack,
@@ -120,7 +120,7 @@ private:
   void phasedLinks(GaugeField &Ufat, GaugeField &Ulong, const GaugeField &U,
                    const EmField &A, double charge);
   // M stored row-major, M[i * N + j], N = nLow_ + nHigh_
-  void computeM(std::vector<Complex> &M, FMat &Dtilde);
+  virtual void computeM(std::vector<Complex> &M, FMat &Dtilde);
   DeltaDLoopResult traces(const std::vector<Complex> &M,
                           const std::string &field, double charge);
 
