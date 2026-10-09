@@ -2,6 +2,7 @@ modules_cpp =\
   Modules/MAction/ImprovedStaggered.cpp \
   Modules/MAction/ImprovedStaggered5D.cpp \
   Modules/MContraction/ASlashMesonField.cpp \
+  Modules/MContraction/DeltaDLoop.cpp \
   Modules/MContraction/Meson.cpp \
   Modules/MContraction/MesonField.cpp \
   Modules/MContraction/MesonFieldLegacy.cpp \
@@ -20,6 +21,7 @@ modules_cpp =\
   Modules/MIO/SaveIldg.cpp \
   Modules/MIO/SaveVector.cpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.cpp \
+  Modules/MNoise/SparseSpinColorDiagonal.cpp \
   Modules/MNoise/TimeDilutedSpinColorDiagonal.cpp \
   Modules/MSolver/A2AVectors.cpp \
   Modules/MSolver/CG.cpp \
@@ -44,6 +46,7 @@ modules_hpp =\
   Modules/MAction/ImprovedStaggered.hpp \
   Modules/MAction/ImprovedStaggered5D.hpp \
   Modules/MContraction/ASlashMesonField.hpp \
+  Modules/MContraction/DeltaDLoop.hpp \
   Modules/MContraction/Meson.hpp \
   Modules/MContraction/MesonField.hpp \
   Modules/MContraction/MesonFieldLegacy.hpp \
@@ -62,6 +65,7 @@ modules_hpp =\
   Modules/MIO/SaveIldg.hpp \
   Modules/MIO/SaveVector.hpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.hpp \
+  Modules/MNoise/SparseSpinColorDiagonal.hpp \
   Modules/MNoise/TimeDilutedSpinColorDiagonal.hpp \
   Modules/MSolver/A2AVectors.hpp \
   Modules/MSolver/CG.hpp \
