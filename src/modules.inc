@@ -19,6 +19,7 @@ modules_cpp =\
   Modules/MIO/LoadMesonField.cpp \
   Modules/MIO/LoadMilc.cpp \
   Modules/MIO/LoadU1.cpp \
+  Modules/MIO/SaveU1.cpp \
   Modules/MIO/SaveIldg.cpp \
   Modules/MIO/SaveVector.cpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.cpp \
@@ -64,6 +65,7 @@ modules_hpp =\
   Modules/MIO/LoadMesonField.hpp \
   Modules/MIO/LoadMilc.hpp \
   Modules/MIO/LoadU1.hpp \
+  Modules/MIO/SaveU1.hpp \
   Modules/MIO/SaveIldg.hpp \
   Modules/MIO/SaveVector.hpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.hpp \

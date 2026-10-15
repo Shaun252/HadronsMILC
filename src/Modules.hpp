@@ -18,6 +18,7 @@
 #include "Modules/MIO/LoadMesonField.hpp"
 #include "Modules/MIO/LoadMilc.hpp"
 #include "Modules/MIO/LoadU1.hpp"
+#include "Modules/MIO/SaveU1.hpp"
 #include "Modules/MIO/SaveIldg.hpp"
 #include "Modules/MIO/SaveVector.hpp"
 #include "Modules/MNoise/FullVolumeSpinColorDiagonal.hpp"
