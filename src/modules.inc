@@ -27,7 +27,9 @@ modules_cpp =\
   Modules/MSource/SeqAslash.cpp \
   Modules/MSource/SeqGamma.cpp \
   Modules/MUtilities/EigenPackExtractEvals.cpp \
-  Modules/MUtilities/ModifyEigenPack.cpp
+  Modules/MUtilities/ModifyEigenPack.cpp \
+  Modules/MUtilities/ReadQudaEigenPack.cpp \
+  Modules/MUtilities/SaveQudaEigenPack.cpp
 
 modules_hpp =\
   Modules/MAction/ImprovedStaggered.hpp \
@@ -58,5 +60,7 @@ modules_hpp =\
   Modules/MSource/SeqAslash.hpp \
   Modules/MSource/SeqGamma.hpp \
   Modules/MUtilities/EigenPackExtractEvals.hpp \
-  Modules/MUtilities/ModifyEigenPack.hpp
+  Modules/MUtilities/ModifyEigenPack.hpp \
+  Modules/MUtilities/ReadQudaEigenPack.hpp \
+  Modules/MUtilities/SaveQudaEigenPack.hpp
 

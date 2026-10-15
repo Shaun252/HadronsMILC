@@ -27,3 +27,5 @@
 #include "Modules/MSource/SeqGamma.hpp"
 #include "Modules/MUtilities/EigenPackExtractEvals.hpp"
 #include "Modules/MUtilities/ModifyEigenPack.hpp"
+#include "Modules/MUtilities/ReadQudaEigenPack.hpp"
+#include "Modules/MUtilities/SaveQudaEigenPack.hpp"

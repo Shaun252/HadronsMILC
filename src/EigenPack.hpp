@@ -29,9 +29,21 @@
 #define HadronsMILC_EigenPack_hpp_
 
 #include <Hadrons/Global.hpp>
+#include <Grid/parallelIO/QudaPartfileIO.h>
 
 BEGIN_HADRONS_NAMESPACE
 
+// ---------------------------------------------------------------------------
+// AdaptorEigenPackMILC
+//
+// Stores Nvec eigenvectors of the staggered Dslash^dag Dslash operator
+// (or the full Dslash for inflated files), together with the MILC-shifted
+// eigenvalues used by QUDA:
+//
+//   eval[i] = ComplexD(2*mass, sqrt(lambda_i))
+//
+// where lambda_i is the i-th eigenvalue of M^dag M.
+// ---------------------------------------------------------------------------
 template <typename Field> class AdaptorEigenPackMILC {
 public:
   AdaptorEigenPackMILC(std::vector<Field> &_evec,
@@ -42,7 +54,7 @@ public:
 
     Real m = 2 * _mass;
 
-    for (int i = 0; i < eval.size(); i++) {
+    for (int i = 0; i < (int)eval.size(); i++) {
       eval[i] = ComplexD(m, sqrt(_eval[i]));
     }
   }
@@ -56,6 +68,45 @@ public:
 template <typename FImpl>
 using MassShiftEigenPack = AdaptorEigenPackMILC<typename FImpl::FermionField>;
 
+// ---------------------------------------------------------------------------
+// QUDA partfile I/O for staggered eigenpacks
+//
+// writeQudaStaggeredEigenpack:
+//   Write a QUDA/MILC eigenvector partfile set from Grid staggered fields.
+//   evecs: full-lattice colour-vector fields (one per eigenvector).
+//   evals: MILC-shifted eigenvalues as ComplexD (from AdaptorEigenPackMILC).
+//   stem:  base filename; each rank writes <stem>.vol<NNNN>.
+//   singlePrec: write in single (float) precision (default: true).
+//
+// readQudaStaggeredEigenpack:
+//   Read a QUDA/MILC eigenvector partfile set into Grid staggered fields.
+//   evecs must be pre-allocated to the expected number of eigenvectors.
+//   evals is resized and filled from file (or zeroed if no eval record).
+// ---------------------------------------------------------------------------
+
+template <typename FImpl>
+void writeQudaStaggeredEigenpack(
+    const std::string                                     &stem,
+    std::vector<typename FImpl::FermionField>             &evecs,
+    const std::vector<ComplexD>                           &evals,
+    GridBase                                              *grid,
+    bool singlePrec = true)
+{
+  Grid::writeQudaEigenpackPartfile(stem, evecs, evals, grid,
+                                   /*nColor=*/3, /*nSpin=*/1, singlePrec);
+}
+
+template <typename FImpl>
+void readQudaStaggeredEigenpack(
+    const std::string                           &stem,
+    std::vector<typename FImpl::FermionField>   &evecs,
+    std::vector<ComplexD>                       &evals,
+    GridBase                                    *grid)
+{
+  Grid::readQudaEigenpackPartfile(stem, evecs, evals, grid,
+                                  /*nColor=*/3, /*nSpin=*/1);
+}
+
 END_HADRONS_NAMESPACE
 
-#endif // Hadrons_EigenPack_hpp_
+#endif // HadronsMILC_EigenPack_hpp_
