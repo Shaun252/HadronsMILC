@@ -49,6 +49,15 @@ CXXFLAGS="$AM_CXXFLAGS $CXXFLAGS"
 LDFLAGS="$AM_LDFLAGS $LDFLAGS"
 LIBS=" -lHadrons -lGridMilc $LIBS `hadrons-config --libs`"
 
+# On macOS, allow undefined symbols during link (some Grid template
+# instantiations may be missing from libGrid.a but are not called by
+# HadronsMILC's staggered-only code path).
+case "$host_os" in
+  darwin*)
+    LDFLAGS="$LDFLAGS -Wl,-undefined,dynamic_lookup"
+    ;;
+esac
+
 AC_MSG_CHECKING([that a minimal Grid/Hadrons/GridMilc program compiles]);
 AC_LINK_IFELSE(
         [AC_LANG_SOURCE([[
