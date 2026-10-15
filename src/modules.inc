@@ -19,8 +19,8 @@ modules_cpp =\
   Modules/MIO/LoadMesonField.cpp \
   Modules/MIO/LoadMilc.cpp \
   Modules/MIO/LoadU1.cpp \
-  Modules/MIO/SaveU1.cpp \
   Modules/MIO/SaveIldg.cpp \
+  Modules/MIO/SaveU1.cpp \
   Modules/MIO/SaveVector.cpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.cpp \
   Modules/MNoise/SparseSpinColorDiagonal.cpp \
@@ -42,7 +42,8 @@ modules_cpp =\
   Modules/MUtilities/EigenPackFullPairs.cpp \
   Modules/MUtilities/GammaMapElement.cpp \
   Modules/MUtilities/ModifyEigenPack.cpp \
-  Modules/MUtilities/PropToFermions.cpp
+  Modules/MUtilities/PropToFermions.cpp \
+  Modules/MUtilities/SaveQudaEigenPack.cpp
 
 modules_hpp =\
   Modules/MAction/ImprovedStaggered.hpp \
@@ -65,8 +66,8 @@ modules_hpp =\
   Modules/MIO/LoadMesonField.hpp \
   Modules/MIO/LoadMilc.hpp \
   Modules/MIO/LoadU1.hpp \
-  Modules/MIO/SaveU1.hpp \
   Modules/MIO/SaveIldg.hpp \
+  Modules/MIO/SaveU1.hpp \
   Modules/MIO/SaveVector.hpp \
   Modules/MNoise/FullVolumeSpinColorDiagonal.hpp \
   Modules/MNoise/SparseSpinColorDiagonal.hpp \
@@ -88,5 +89,6 @@ modules_hpp =\
   Modules/MUtilities/EigenPackFullPairs.hpp \
   Modules/MUtilities/GammaMapElement.hpp \
   Modules/MUtilities/ModifyEigenPack.hpp \
-  Modules/MUtilities/PropToFermions.hpp
+  Modules/MUtilities/PropToFermions.hpp \
+  Modules/MUtilities/SaveQudaEigenPack.hpp
 

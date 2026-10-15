@@ -19,6 +19,7 @@
 #include "Modules/MIO/LoadMilc.cpp"
 #include "Modules/MIO/LoadU1.cpp"
 #include "Modules/MIO/SaveIldg.cpp"
+#include "Modules/MIO/SaveU1.cpp"
 #include "Modules/MIO/SaveVector.cpp"
 #include "Modules/MNoise/FullVolumeSpinColorDiagonal.cpp"
 #include "Modules/MNoise/SparseSpinColorDiagonal.cpp"
@@ -41,3 +42,4 @@
 #include "Modules/MUtilities/GammaMapElement.cpp"
 #include "Modules/MUtilities/ModifyEigenPack.cpp"
 #include "Modules/MUtilities/PropToFermions.cpp"
+#include "Modules/MUtilities/SaveQudaEigenPack.cpp"
