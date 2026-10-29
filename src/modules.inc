@@ -14,6 +14,7 @@ modules_cpp =\
   Modules/MFermion/SpinTaste.cpp \
   Modules/MGauge/APBCGauge.cpp \
   Modules/MGauge/HISQSmear.cpp \
+  Modules/MGauge/PureGaugeEm.cpp \
   Modules/MGauge/StochEmFunc.cpp \
   Modules/MGauge/U1Phase.cpp \
   Modules/MIO/LoadMesonField.cpp \
@@ -61,6 +62,7 @@ modules_hpp =\
   Modules/MFermion/SpinTaste.hpp \
   Modules/MGauge/APBCGauge.hpp \
   Modules/MGauge/HISQSmear.hpp \
+  Modules/MGauge/PureGaugeEm.hpp \
   Modules/MGauge/StochEmFunc.hpp \
   Modules/MGauge/U1Phase.hpp \
   Modules/MIO/LoadMesonField.hpp \

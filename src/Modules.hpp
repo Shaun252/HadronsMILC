@@ -13,6 +13,7 @@
 #include "Modules/MFermion/SpinTaste.hpp"
 #include "Modules/MGauge/APBCGauge.hpp"
 #include "Modules/MGauge/HISQSmear.hpp"
+#include "Modules/MGauge/PureGaugeEm.hpp"
 #include "Modules/MGauge/StochEmFunc.hpp"
 #include "Modules/MGauge/U1Phase.hpp"
 #include "Modules/MIO/LoadMesonField.hpp"
