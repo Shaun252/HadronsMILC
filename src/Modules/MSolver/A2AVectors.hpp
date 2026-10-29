@@ -51,8 +51,15 @@ public:
   GRID_SERIALIZABLE_CLASS_MEMBERS(A2AVectorsMILCPar, std::string, noise,
                                   std::string, action, std::string, lowModes,
                                   std::string, solver, std::string, highOutput,
-                                  bool, highMultiFile);
+                                  bool, highMultiFile, unsigned int,
+                                  nNoiseVectors);
+  A2AVectorsMILCPar() : nNoiseVectors(0) {}
 };
+// nNoiseVectors: use only the first nNoiseVectors noise vectors (0 or absent =
+//           all). The count includes the dilution: each source is split into
+//           nComp components, stored at index source*nComp + comp, so the
+//           first n sources are nNoiseVectors = n * nComp (time-colour
+//           dilution at l3248: nComp = 48 x 3 = 144).
 
 template <typename FImpl, typename Pack>
 class TA2AVectorsMILC : public Module<A2AVectorsMILCPar> {
@@ -169,6 +176,15 @@ void TA2AVectorsMILC<FImpl, Pack>::setup(void) {
     auto &noise = envGet(std::vector<FermionField>, par().noise);
 
     Nh_ = noise.size();
+  }
+
+  if (par().nNoiseVectors > 0) {
+    // the noise vector list is empty until the noise module executes
+    // (scheduling pass), so only check when it is filled
+    if (Nh_ > 0 && par().nNoiseVectors > Nh_) {
+      HADRONS_ERROR(Size, "nNoiseVectors exceeds the number of noise vectors");
+    }
+    Nh_ = par().nNoiseVectors;
   }
 
   envCreate(std::vector<FermionField>, getName() + "_w", 1, Nh_,
